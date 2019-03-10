@@ -1,6 +1,97 @@
 ---
 title: "workout01-yunzhe-zhou"
+author: "Yunzhe Zhou"
 output: github_document
 ---
 
+```{r}
+table=read.csv("../data/shots-data.csv")
+table
+```
 
+```{r}
+library(data.table)
+library(dplyr)
+n=length(table$team_name)
+total=c()
+made=c()
+player_name=c("Stephen Curry","Klay Thompson","Kevin Durant","Graymond Green","Andre Iguodala")
+for(m in 1:5)
+{
+  total[m]=0
+  made[m]=0
+  for(i in 1:n)
+{
+  if(table$name[i]==player_name[m] & table$shot_type[i]=="2PT Field Goal")
+  {
+    total[m]=total[m]+1
+    if(table$shot_made_flag[i]=="shot_yes")
+    {
+      made[m]=made[m]+1
+    }
+  }
+}
+}
+perc=made/total
+table1=data.table(player_name,total,made,perc)
+colnames(table1)=c("name","total","made","perc_made")
+arrange(table1,desc(perc_made))
+```
+
+```{r}
+library(data.table)
+library(dplyr)
+n=length(table$team_name)
+total=c()
+made=c()
+player_name=c("Stephen Curry","Klay Thompson","Kevin Durant","Graymond Green","Andre Iguodala")
+for(m in 1:5)
+{
+  total[m]=0
+  made[m]=0
+  for(i in 1:n)
+{
+  if(table$name[i]==player_name[m] & table$shot_type[i]=="3PT Field Goal")
+  {
+    total[m]=total[m]+1
+    if(table$shot_made_flag[i]=="shot_yes")
+    {
+      made[m]=made[m]+1
+    }
+  }
+}
+}
+perc=made/total
+table2=data.table(player_name,total,made,perc)
+colnames(table2)=c("name","total","made","perc_made")
+arrange(table2,desc(perc_made))
+```
+
+```{r}
+library(data.table)
+library(dplyr)
+n=length(table$team_name)
+total=c()
+made=c()
+player_name=c("Stephen Curry","Klay Thompson","Kevin Durant","Graymond Green","Andre Iguodala")
+for(m in 1:5)
+{
+  total[m]=0
+  made[m]=0
+  for(i in 1:n)
+{
+  if(table$name[i]==player_name[m] & (table$shot_type[i]=="2PT Field Goal" | table$shot_type[i]=="3PT Field Goal"))
+  {
+    total[m]=total[m]+1
+    if(table$shot_made_flag[i]=="shot_yes")
+    {
+      made[m]=made[m]+1
+    }
+  }
+}
+}
+perc=made/total
+table3=data.table(player_name,total,made,perc)
+colnames(table3)=c("name","total","made","perc_made")
+arrange(table3,desc(perc_made))
+```
