@@ -86,9 +86,7 @@ table2=arrange(table2,desc(perc_made))
 table3=arrange(table3,desc(perc_made))
 ```
 
- <center><font size="6" > What Factors Will Influence Hit Rate of  </font></center>
- 
- <center><font size="6" >Players in Golden Warriors ? </font></center>
+# What Factors Will Influence Hit Rate of Warriors ? 
 
 ```{r out.width='80%',echo=FALSE,fig.align='center'}
 knitr::include_graphics("../images/warriors.jpg")

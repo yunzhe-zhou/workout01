@@ -2,12 +2,9 @@ workout01-yunzhe-zhou
 ================
 Yunzhe Zhou
 
-<center>
-<font size="6" > What Factors Will Influence Hit Rate of </font>
-</center>
-<center>
-<font size="6" >Players in Golden Warriors ? </font>
-</center>
+What Factors Will Influence Hit Rate of Warriors ?
+==================================================
+
 <img src="../images/warriors.jpg" width="80%" style="display: block; margin: auto;" />
 
 Key Words
